@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Author(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=250)
     books = models.ManyToManyField('Book', through='Authored')
 
     class Meta:
@@ -13,7 +13,7 @@ class Author(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=250)
     authors = models.ManyToManyField('Author', through='Authored')
 
     class Meta:
